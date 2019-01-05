@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>H Historial</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/3-col-portfolio.css" rel="stylesheet">
+
+    
+    <script type="text/javascript">
+
+        //DESCRIPCIÓN: Recupera los datos de la querystring.
+        function getQueryStrings() {
+
+            var assoc = {};
+            var decode = function (s) { return decodeURIComponent(s.replace(/\+/g, " ")); };
+            var queryString = location.search.substring(1);
+            var keyValues = queryString.split('&');
+
+            for (var i in keyValues) {
+
+                var key = keyValues[i].split('=');
+
+                if (key.length > 1) {
+                    assoc[decode(key[0])] = decode(key[1]);
+                }
+            }
+
+            return assoc;
+        }
+
+
+        //DESCRIPCIÓN: Realiza las tareas oportunas al cargar la página.
+        function CargarLic() {
+
+            //Recuperamos los datos de la querystring.
+            var qs = getQueryStrings();
+
+            //Recuperamos el valor de un parámetro específico.
+            var myParam = qs["licencia"];
+
+       //     alert(myParam);
+          return myParam
+        }
+      
+      
+      
+         function CargarNom() {
+
+            //Recuperamos los datos de la querystring.
+            var qs = getQueryStrings();
+
+            //Recuperamos el valor de un parámetro específico.
+            var myParam = qs["nombre"];
+
+       //     alert(myParam);
+          return myParam
+        }
+
+        function openPDF(){
+          window.open("excel/"+ CargarLic()+".pdf","_blank");
+        }
+      
+      function abrirpdf(){
+        var formulario = document.forms['name_formulario'];
+        var rutapdf=formulario.elements['imput1'].value+formulario.elements['imput2'].value+'.pdf';
+        window.open(rutapdf,'name_iframe_lectura');
+      }   
+      
+      
+     
+      
+
+        //Llamada a la función para que se ejecute al cargar la página.
+      //  Cargar();
+
+    </script>
+    
+    
+        
+    
+    
+    
+    
+    
+    
+  </head>
+  <body>
+    <script>
+      let licencia = CargarLic();
+      let nombre = CargarNom();
+      let fichero = "excel/" + licencia + ".pdf";
+      
+      document.body.innerHTML = "La licencia es:  " + licencia + "  El jugador es: " + nombre + " El nombre del fichero: "  + fichero;
+   </script>
+      
+      
+      <!--
+    <embed src="excel/CM41674041.pdf" type="application/pdf" width="600" height="780" style="border: none></embed> 
+    <p> otra linea </p>
+        -->
+
+
+    
+    <!-- Page Heading
+    
+      <h1 class="my-4"> DE:  
+        <small>En El AAAArODY</small>
+      </h1>
+          -->              
+      
+    
+     <!--
+    <embed src="excel/" & "CM41674041.pdf" type="application/pdf" width="600" height="780" style="border: none></embed> 
+    <p> otra linea </p>
+       -->               
+                      
+           <!--            
+      <script>
+        let licencia = CargarLic();
+        document.body.innerHTML = "La licenciencia es:  " + licencia;
+        let nombre = CargarNom();
+        document.body.innerHTML = " " + nombre;
+        let fichero = "excel/" + CargarLic() + ".pdf";
+        document.body.innerHTML = fichero;
+      </script> 
+           -->  
+  
+     <!--  <a href="#" onclick="openPDF()";
+       </a>    
+       <div>
+         
+        <!-- <embed src="excel/CM41674041.pdf" type="application/pdf" width=100% height=100%></embed>  
+        <embed src="excel/" + <script>CargarLic()</script> + ".pdf" type="application/pdf" width=100% height=100%></embed>
+
+  
+       </div
+        -->
+    
+    
+       
+  </body>
+</html>
