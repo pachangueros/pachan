@@ -1,2 +1,2 @@
-# pachan3
-Handicap "Oficial" de Pachangueros
+# Pachangueros
+https://pachangueros.github.io/pachan/
