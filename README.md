@@ -1,3 +1,3 @@
 # Pachangueros
-https://pachangueros.github.io/pachan/
+https://sonfoal.github.io/pachan/
 version 1.2
